@@ -1,0 +1,121 @@
+.list-display {
+    width: 100%;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.l-elmt {
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    min-height: 5rem;
+    padding: 0.5rem 1rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: top;
+    transition: 0.3s;
+}
+.l-elmt-detail {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.l-elmt-img-wrapper {
+    width: 5rem;
+    min-width: 5rem;
+    margin-right: 1rem;
+}
+
+.s-img-cover {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: inherit;
+    height: 5rem;
+    border-radius: 5px;
+}
+
+.l-elmt:hover {
+    color: #6adcff;
+    cursor: pointer;
+}
+.l-elmt-detail-wrapper {
+    flex: 1;
+}
+.l-elmt-detail-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+.l-elmt-detail {
+    font-size: 0;
+}
+.l-elmt-detail span {
+    font-size: 0.9rem;
+}
+.l-elmt-detail span::after {
+    content: '•';
+    font-size: 0.9rem;
+    padding: 0 0.3rem;
+}
+.l-elmt-detail span:last-child::after {
+    content: '';
+}
+.clickable-styled {
+    display: block;
+}
+
+@media only screen and (max-width: 768px) {
+    .l-elmt {
+        padding: 0.5rem 0.5rem 0.5rem 0rem;
+    }
+}
+
+/* CONTROl */
+
+.l-page-control-info {
+    min-height: 50px;
+    margin: 1rem 0 0 0;
+}
+.l-page-control-info > div {
+    display: inline-block;
+}
+
+.l-page-control-btn {
+    text-align: right;
+
+}
+.l-page-control-btn img {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 0.2rem;
+    width: 2.4rem;
+}
+
+.l-which-page {
+    font-size: 1.2rem;
+}
+
+.l-which-page > span {
+    font-weight: 700;
+}
+.delete-icon-wrap > img {
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+}
+.delete-icon-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+@media only screen and (max-width: 768px) {
+    .l-page-control-btn img {
+        width: 2rem;
+    }
+}

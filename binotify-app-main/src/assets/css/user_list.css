@@ -1,0 +1,14 @@
+.list-user-limit {
+    max-height: 60vh; 
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    padding-right: 17px;
+    box-sizing: content-box;
+}
+
+.list-user {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}

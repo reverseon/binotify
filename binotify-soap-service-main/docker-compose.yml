@@ -1,0 +1,35 @@
+version: '3.4'
+services:
+  tubes2-soap-db:
+    image: mysql:8.0.31
+    container_name: tubes2-soap-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: carsiths
+      MYSQL_DATABASE: soap_db
+      MYSQL_USER: soap
+      MYSQL_PASSWORD: carsiths
+    volumes:
+      - soap-db-vol:/var/lib/mysql
+      - ./soap-db/ddl.sql:/docker-entrypoint-initdb.d/ddl.sql
+    ports:
+      - "3306:3306"
+    networks:
+      - "tubes2-network"
+  alpine-jdk11:
+    build:
+      context: ./soap-webservice
+      dockerfile: Dockerfile
+    container_name: tubes2-soap-ws
+    ports:
+      - "2434:2434"
+    networks:
+      - tubes2-network
+    depends_on:
+      - "tubes2-soap-db"
+volumes:
+  soap-db-vol:
+networks:
+  tubes2-network:
+    name: tubes2-network
+    driver: bridge

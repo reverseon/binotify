@@ -1,0 +1,102 @@
+.edit-song, .song-details {
+    max-width: 500px;
+}
+.song-cover {
+    justify-content: center;
+    align-items: flex-start;
+}
+.song-cover > * {
+    margin: 0 2rem 0 0;
+}
+.song-details {
+    font-size: 0;
+}
+.section-title {
+    font-size: 24px;
+}
+.song-details span {
+    font-size: 1rem;
+}
+.song-details span::after {
+    content: '•';
+    font-size: 1rem;
+    padding: 0 0.3rem;
+}
+.song-details span:last-of-type::after {
+    content: '';
+}
+
+.song-control > * {
+    display: block;
+    flex: 1;
+    margin: 1rem 0.5rem;
+}
+.song-control > *:first-child {
+    margin-left: 0;
+}
+.song-control > *:last-child {
+    margin-right: 0;
+}
+.song-cover-img > img {
+    width: 100%;
+    object-fit: cover;
+}
+.song-cover-img {
+    overflow: hidden;
+    max-width: 200px;
+    max-height: 200px;
+
+}
+
+.edit-song > * {
+    margin: 0 0 1rem 0;
+}
+
+.song-upload-btn {
+    display: block;
+}
+
+.control-commit-song-btn > * {
+    flex: 1;
+    margin: 0 0.5rem;
+}
+.control-commit-song-btn > *:first-child {
+    margin-left: 0;
+}
+.control-commit-song-btn > *:last-child {
+    margin-right: 0;
+}
+
+@media only screen and (max-width: 768px) {
+    .edit-song, .song-details {
+        max-width: none;
+    }
+    .song-cover > * {
+        margin: 0;
+        margin-bottom: 1rem;
+    }
+    .song-details {
+        width: 100%;
+    }
+    .song-details span {
+        font-size: 0.9rem;
+    }
+    .song-details span::after {
+        font-size: 0.9rem;
+    }
+    .song-cover {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .song-cover-img {
+        width: 100%;
+        max-width: fit-content;
+        max-height: fit-content;
+        height: 100%;
+        margin: 0 0 1rem 0;
+    }
+    .song-cover-img > img {
+        width: 100%;
+    }
+}

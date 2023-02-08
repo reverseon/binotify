@@ -1,0 +1,6 @@
+# ./nginx
+/nginx/
+/php/
+/raw_template/
+/src/assets/audio/
+*.bak

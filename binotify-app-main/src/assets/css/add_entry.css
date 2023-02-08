@@ -1,0 +1,30 @@
+.add-entry-control > *, .section-fw > *{
+    margin-bottom: 1rem;
+}
+.section-fw > *:first-child{
+    margin-bottom: 0;
+}
+
+.button-filter {
+    width: 100%;
+}
+
+.section-fw {
+    max-width: 50vw;
+}
+
+.select-style {
+    width: 100%;
+}
+
+@media only screen and (max-width: 991px) {
+    .section-fw {
+        max-width: 75vw;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .section-fw {
+        max-width: none;
+    }
+}

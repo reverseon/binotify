@@ -1,0 +1,180 @@
+/* COLOR PALETTE 
+#C4C9D3
+#5F697C
+#A1ADC4
+#8997B1
+#1B1E4B
+#A1A9B6
+#323669
+#AAB0D2
+#7275db
+#6adcff
+*/
+
+
+/* GLOBAL SETTINGS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+::-webkit-scrollbar {
+    display: none;
+ }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+/* FOR REM */
+html {
+    font-size: 16px;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #fff;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.bg-wrap {
+    /* background-image: url('adowall.jpg'); */
+    background-color: black;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+/* REUSABLE */
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: top;
+    overflow: auto;
+}
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: auto;
+}
+
+/* BASE SECTION STYLE*/
+.section-fw {
+    width: 90%;
+    margin: 0 auto 1rem auto;
+    padding: 1rem 2rem;
+    /* background-color: #aaa; */
+    /* background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0, 0.4);  */
+    border-radius: 30px;
+}
+.section-title {
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    padding-bottom: 0.7rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .section-fw {
+        padding: 0.5rem;
+        margin: 0 auto 0 auto;
+    }
+    .section-title {
+        font-size: 1.3rem;
+        padding-bottom: 0.8rem;
+    }
+}
+
+.display-none {
+    display: none !important;
+}
+
+.visib-hidden {
+    visibility: hidden !important;
+}
+
+.hide-input-file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.op-0 {
+    opacity: 0 !important;
+}
+
+.input-gathered span {
+    font-weight: 700;
+}
+
+/* BUTTON */
+.button-filter {
+    background-color: #FFFFFF;
+    border: 1px solid #222222;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #222222;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    padding: 13px 23px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    touch-action: manipulation;
+    transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+    user-select: none;
+    -webkit-user-select: none;
+    width: auto;
+  }
+  
+  .button-filter:focus-visible {
+    box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+    transition: box-shadow .2s;
+  }
+  
+  .button-filter:active {
+    background-color: #F7F7F7;
+    border-color: #000000;
+    transform: scale(.96);
+  }
+  
+  .button-filter:disabled {
+    border-color: #DDDDDD;
+    color: #DDDDDD;
+    cursor: not-allowed;
+    opacity: 1;
+  }
+  
+.input-text {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    margin: 0 auto;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.select-style {
+    min-width: 15vw;
+    padding-left: 0.7rem;
+    padding-top: 1rem;
+    min-height: 3rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .select-style {
+        min-width: 100%;
+    }
+}
+

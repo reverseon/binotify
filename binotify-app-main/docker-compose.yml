@@ -1,0 +1,60 @@
+version: '3.3'
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: server
+    container_name: tubes-1-server
+    tty: true
+    ports:
+      - "8008:80"
+    networks:
+      - tubes2-network
+    volumes:
+      - ./src:/var/www/html
+      - ./src/assets/audio:/var/www/html/assets/audio
+      - ./src/assets/img:/var/www/html/assets/img
+      - ./nginx/logs:/var/log/nginx
+    restart: always
+    depends_on:
+      - fpms
+  fpms:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: fpm
+    container_name: tubes-1-fpm
+    networks:
+      - tubes2-network
+    restart: unless-stopped
+    volumes:
+      - ./src:/var/www/html
+      - ./php/logs:/var/log/fpm-php.www.log
+  db: 
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      target: db
+    container_name: tubes-1-db
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./config/pg_hba.conf:/var/lib/postgresql/pg_hba.conf
+    ports:
+      - "5050:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=musikwbd
+    tty: true
+    restart: unless-stopped
+    networks:
+      - tubes2-network
+
+volumes:
+  db_data:
+networks: 
+  tubes2-network:
+    name: tubes2-network
+    driver: bridge
+    

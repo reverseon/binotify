@@ -1,0 +1,19 @@
+version: "3.3"
+services:
+  react-app:
+    container_name: 'tubes2-premium-app'
+    build: .
+    volumes:
+      - ./src:/app/src
+    ports:
+      - '3006:3000'
+    stdin_open: true
+    tty: true
+    networks:
+      - tubes2-network
+    restart: always
+
+networks:
+  tubes2-network:
+    name: tubes2-network
+    driver: bridge

@@ -1,0 +1,164 @@
+.song-list {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.section-title {
+    display: inline-block;
+}
+.s-filter-control {
+    position: sticky;
+    z-index: 2;
+    top: 0;
+    background: black;
+    width: 100%;
+    align-self: flex-start;
+}
+
+.song-middle-limit {
+    max-height: 50vh; 
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    padding-right: 17px;
+    box-sizing: content-box;
+}
+
+.search-filter-icon {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 0.2rem;
+    width: 1.8rem;
+}
+
+.filter-form {
+    margin-bottom: 1rem;
+}
+
+/* RADIO STYLING */
+
+.dark-radio {
+    --primary: #6adcff;
+    --other: white;
+}
+.filter-panel {
+    justify-content: center;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+.filter-panel label {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    margin: 12px 0;
+
+    cursor: pointer;
+    position: relative;
+}
+.filter-panel label input {
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+.filter-panel > div {
+    margin: 0.5rem 1rem;
+}
+.design {
+    width: 16px;
+    height: 16px;
+  
+    border: 1px solid var(--other);
+    border-radius: 100%;
+    margin-right: 16px;
+  
+    position: relative;
+}
+.design::before,
+.design::after {
+  content: "";
+  display: block;
+
+  width: inherit;
+  height: inherit;
+
+  border-radius: inherit;
+
+  position: absolute;
+  transform: scale(0);
+  transform-origin: center center;
+}
+
+.design:before {
+  background: var(--other);
+  opacity: 0;
+  transition: .3s;
+}
+
+.design::after {
+  background: var(--primary);
+  opacity: .4;
+  transition: .6s;
+}
+/* .text */
+.text {
+    color: var(--other);
+    font-weight: bold;
+}
+  
+
+/* checked state */
+.filter-panel label input:checked+.design::before {
+    opacity: 1;
+    transform: scale(.6);
+}
+
+
+/* other states */
+.filter-panel input:hover+.design,
+.filter-panel label input:focus+.design {
+    border: 1px solid var(--primary);
+}
+
+.filter-panel label input:hover+.design:before,
+.filter-panel label input:focus+.design:before {
+    background: var(--primary);
+}
+
+.filter-panel label input:hover~.text {
+    color: var(--primary);
+}
+
+.filter-panel label input:focus+.design::after,
+.filter-panel label input:active+.design::after {
+    opacity: .1;
+    transform: scale(2.6);
+}
+/* DROPDOWN STYLING */
+.genre-select-container > .text {
+    margin-bottom: 12px;
+}
+
+/* CHECKBOX STYLING */
+
+.type-cb-container .text {
+    margin-bottom: 0.5rem;
+}
+
+.type-cb-container > label {
+    display: inline-block;
+    margin: 0 0.5rem 0.5rem;
+}
+@media only screen and (max-width: 768px) {
+    .filter-panel {
+        flex-direction: column;
+        align-items: left;
+    }
+    .filter-panel > div {
+        margin: 0.5rem 0;
+    }
+}

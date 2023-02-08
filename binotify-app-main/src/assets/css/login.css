@@ -1,0 +1,19 @@
+.login-control > * {
+    margin-bottom: 1rem;
+}
+
+.section-fw {
+    max-width: 50vw;
+}
+
+@media only screen and (max-width: 991px) {
+    .section-fw {
+        max-width: 75vw;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .section-fw {
+        max-width: none;
+    }
+}

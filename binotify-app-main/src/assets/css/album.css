@@ -1,0 +1,105 @@
+.album-cover {
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.album-cover > * {
+    margin: 0 2rem 0 0;
+}
+.album-details {
+    font-size: 0;
+}
+.section-title {
+    font-size: 24px;
+}
+.album-details #modifiable-wrapper span {
+    font-size: 1rem;
+}
+.album-details #modifiable-wrapper span::after {
+    content: '•';
+    font-size: 1rem;
+    padding: 0 0.3rem;
+}
+.album-details #modifiable-wrapper span:last-of-type::after {
+    content: '';
+}
+.edit-album-btn {
+    display: block;
+    margin: 1rem 0;
+}
+
+.album-cover-img > img {
+    width: 100%;
+    object-fit: cover;
+}
+.album-cover-img {
+    overflow: hidden;
+    max-width: 200px;
+    max-height: 200px;
+
+}
+
+.edit-album > * {
+    margin: 0 0 1rem 0;
+}
+
+.album-upload-btn {
+    display: block;
+}
+
+.control-commit-album-btn > * {
+    flex: 1;
+    margin: 0 0.5rem;
+}
+.control-commit-album-btn > *:first-child {
+    margin-left: 0;
+}
+.control-commit-album-btn > *:last-child {
+    margin-right: 0;
+}
+
+.add-song-icon {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 0.2rem;
+    width: 1.8rem;
+}
+.add-song-panel > * {
+    margin: 1rem 0;
+}
+
+.add-song-panel .add-song-btn {
+    margin-left: auto;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .add-song-panel .add-song-btn {
+        width: 100%;
+    }
+    .album-cover > * {
+        margin: 0;
+        margin-bottom: 1rem;
+    }
+    .album-details {
+        width: 100%;
+    }
+    .album-details #modifiable-wrapper span {
+        font-size: 0.9rem;
+    }
+    .album-details #modifiable-wrapper span::after {
+        font-size: 0.9rem;
+    }
+    .album-cover {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .album-cover-img {        
+        max-width: fit-content;
+        max-height: fit-content;
+        margin: 0 0 1rem 0;
+    }
+    .album-cover-img > img {
+        width: 100%;
+    }
+}
